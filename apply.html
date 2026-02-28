@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admission Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="section active">
+<h2>Admission Form</h2>
+
+<div id="admissionForm" class="form-wrapper">
+
+<form action="https://formspree.io/f/mpqjoyyy" method="POST">
+
+<div class="form-row">
+<label>Student Name</label>
+<span>:</span>
+<input type="text" name="student_name" required>
+</div>
+
+<div class="form-row">
+<label>Father’s Name</label>
+<span>:</span>
+<input type="text" name="father_name" required>
+</div>
+
+<div class="form-row">
+<label>Father Occupation</label>
+<span>:</span>
+<input type="text" name="occupation" required>
+</div>
+
+<div class="form-row">
+    <label>Father Contact Number :</label> 
+    <input type="tel" name="father_contact" placeholder="Father's contact number" required>
+</div>
+
+<div class="form-row">
+    <label>Father WhatsApp Number :</label>
+    <input type="tel" name="father_whatsapp" placeholder="Father's WhatsApp number" required>
+</div>
+
+<div class="form-row">
+    <label>Email (Optional)</label>
+    <input type="email" name="email" placeholder="Your email (optional)">
+</div>
+
+<div class="form-row">
+<label>Mailing Address</label>
+<span>:</span>
+<input type="text" name="address" required>
+</div>
+
+<div class="form-row">
+<label>Date of Birth</label>
+<span>:</span>
+<input type="date" name="dob" required>
+</div>
+
+
+
+<div class="form-row">
+<label>Gender</label>
+<span>:</span>
+<select name="gender" required>
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+
+<h3>Siblings Information (Optional)</h3>
+
+<div class="form-row">
+<label>Sibling 1</label>
+<span>:</span>
+<input type="text" name="sibling1_name" placeholder="Name (optional)">
+<input type="text" name="sibling1_class" placeholder="Class (optional)">
+</div>
+
+<div class="form-row">
+<label>Sibling 2</label>
+<span>:</span>
+<input type="text" name="sibling2_name" placeholder="Name (optional)">
+<input type="text" name="sibling2_class" placeholder="Class (optional)">
+</div>
+
+<div class="form-row">
+<label>Sibling 3</label>
+<span>:</span>
+<input type="text" name="sibling3_name" placeholder="Name (optional)">
+<input type="text" name="sibling3_class" placeholder="Class (optional)">
+</div>
+
+<div class="form-row">
+<label>Sibling 4</label>
+<span>:</span>
+<input type="text" name="sibling4_name" placeholder="Name (optional)">
+<input type="text" name="sibling4_class" placeholder="Class (optional)">
+</div>
+
+<div class="form-row">
+<label>Sibling 5</label>
+<span>:</span>
+<input type="text" name="sibling5_name" placeholder="Name (optional)">
+<input type="text" name="sibling5_class" placeholder="Class (optional)">
+</div>
+
+<button type="submit" class="btn">Submit Application</button>
+</form>
+
+</div>
+
+<div id="formResponse" class="response-message"></div>
+</section>
+
+</body>
+</html>

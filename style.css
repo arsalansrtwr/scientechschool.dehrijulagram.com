@@ -1,0 +1,1711 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    line-height:1.6;
+    color:#e6ecff;
+    background:linear-gradient(135deg,#050f2d,#0a1f44 60%,#0d2c6b);
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 80px;
+    background:linear-gradient(135deg,#071533,#0d2c6b);
+    color:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:50px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#f4c542;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(5,15,45,0.8),rgba(5,15,45,0.85)),
+    url('background.jpeg') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding-top:80px;
+}
+
+.hero h2{
+    font-size:50px;
+    letter-spacing:1px;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    background:linear-gradient(135deg,#d4af37,#f4c542);
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+    color:#071533;
+    display:inline-block;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(212,175,55,0.4);
+}
+
+/* SECTIONS */
+.section{
+    padding:100px 100px;
+    text-align:center;
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(8px);
+    border-radius:20px;
+    margin:40px 40px;
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.6s ease;
+}
+
+.section.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.light{
+    background:linear-gradient(135deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+}
+
+/* CARD SYSTEM */
+.cards,
+.teachers{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.card,
+.teacher-card,
+.principal-card,
+.vm-card{
+    background:linear-gradient(145deg,#0d2c6b,#071533);
+    color:#f0f4ff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    border:1px solid rgba(212,175,55,0.2);
+    transition:0.4s;
+}
+
+.card:hover,
+.teacher-card:hover,
+.principal-card:hover,
+.vm-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+    border:1px solid rgba(212,175,55,0.7);
+}
+
+.teacher-card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* PRINCIPAL BLOCK SIDE BY SIDE */
+.principal-block{
+    display:flex;
+    gap:40px;
+    align-items:stretch;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+/* Profile card */
+.principal-card{
+    width:320px;
+    flex-shrink:0;
+    text-align:center;
+}
+
+/* Principal photo */
+.principal-photo{
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 20px auto;
+    border:5px solid #d4af37;
+    box-shadow:
+        0 0 0 8px rgba(212,175,55,0.15),
+        0 20px 40px rgba(0,0,0,0.6);
+    transition:0.4s ease;
+}
+
+.principal-photo:hover{
+    transform:scale(1.05);
+}
+
+/* Remarks card wide */
+.principal-remarks{
+    flex:1;
+    background:linear-gradient(145deg,#0d2c6b,#071533);
+    color:#f0f4ff;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.5);
+    border:1px solid rgba(212,175,55,0.25);
+    text-align:left;
+}
+
+.principal-remarks h3{
+    color:#f4c542;
+    margin-bottom:20px;
+}
+
+/* TABLE */
+.results-table{
+    width:70%;
+    margin:30px auto;
+    border-collapse:collapse;
+    background:linear-gradient(145deg,#0d2c6b,#071533);
+    color:white;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.results-table th{
+    background:linear-gradient(135deg,#d4af37,#f4c542);
+    color:#071533;
+}
+
+.results-table th,
+.results-table td{
+    border:1px solid rgba(255,255,255,0.1);
+    padding:10px;
+}
+
+.results-table tr:nth-child(even){
+    background:rgba(255,255,255,0.05);
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* FORM */
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,textarea{
+    padding:10px;
+    border:1px solid rgba(212,175,55,0.3);
+    border-radius:6px;
+    background:#071533;
+    color:white;
+    transition:0.3s;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#d4af37;
+    outline:none;
+    box-shadow:0 0 10px rgba(212,175,55,0.5);
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(135deg,#071533,#0d2c6b);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+    margin-top:15px;
+}
+
+.social-icons a{
+    color:white;
+    margin:0 12px;
+    font-size:22px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:#d4af37;
+}
+
+/* TOP BUTTON */
+#topBtn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    padding:10px 15px;
+    background:linear-gradient(135deg,#d4af37,#f4c542);
+    border:none;
+    cursor:pointer;
+    display:none;
+    border-radius:6px;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.modal-content{
+    background:linear-gradient(145deg,#0d2c6b,#071533);
+    color:white;
+    padding:25px;
+    border-radius:12px;
+    width:90%;
+    max-width:500px;
+    border:1px solid rgba(212,175,55,0.3);
+}
+
+.close-modal{
+    float:right;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.view-cv{
+    margin-top:10px;
+    padding:6px 12px;
+    background:linear-gradient(135deg,#d4af37,#f4c542);
+    color:#071533;
+    border:none;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav{
+        display:none;
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#071533;
+        padding:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .section{
+        padding:80px 20px;
+        margin:20px;
+    }
+
+    .principal-block{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .principal-card,
+    .principal-remarks{
+        width:100%;
+    }
+
+    .principal-photo{
+        width:180px;
+        height:180px;
+    }
+}
+.form-wrapper {
+    background: #ffffff;
+}
+
+.form-row label,
+.form-row span,
+.form-row input,
+.form-row select,
+.form-row textarea {
+    color: #ffffff;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    background: #ffffff;
+    border: 1px solid #ccc;
+}
+.form-wrapper .form-row label,
+.form-wrapper .form-row span {
+    color: #000;
+}
+
+.form-wrapper .form-row input,
+.form-wrapper .form-row select,
+.form-wrapper .form-row textarea {
+    color: #000;
+    background: #fff;
+}
+.form-wrapper .form-row h3,
+.form-wrapper .form-row label,
+.form-wrapper .form-row span {
+    color: #000;
+}
+.form-wrapper > h3 {
+    color: #000;
+}
+.form-wrapper h3 {
+    color: #000000 !important;
+}
+.form-wrapper {
+    max-width:700px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.form-row label {
+    min-width:160px;
+    font-weight:600;
+}
+
+.form-row span {
+    font-weight:600;
+}
+
+.form-row input,
+.form-row select {
+    flex:1;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+.excellence-card {
+    position:absolute;
+    bottom:30px;
+    left:30px;
+    background:linear-gradient(145deg,#0d2c6b,#071533);
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    color:white;
+    max-width:220px;
+}
+
+.excellence-card h3 {
+    font-size:16px;
+    margin-bottom:6px;
+    color:#f4c542;
+}
+
+.excellence-card p {
+    font-size:12px;
+    line-height:2.4;
+    opacity:0.9;
+}
+
+.excellence-number {
+    font-size:32px;
+    font-weight:700;
+    color:white;
+    margin-top:8px;
+}
+
+.excellence-number span {
+    color:#f4c542;
+}
+/* YEARS OF EXCELLENCE CARD */
+.excellence-card {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: linear-gradient(145deg, #0d2c6b, #071533);
+    padding: 15px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    color: white;
+    max-width: 220px;
+    text-align: left;
+}
+
+.excellence-card h3 {
+    font-size: 16px;
+    color: #f4c542;
+}
+
+.excellence-card p {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.excellence-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-top: 6px;
+}
+
+/* CONTACT INFO CARD */
+.contact-info-card {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(145deg, #071533, #0d2c6b);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    color: white;
+    max-width: 240px;
+    text-align: left;
+}
+
+.contact-info-card h3 {
+    font-size: 16px;
+    color: #f4c542;
+    margin-bottom: 8px;
+}
+
+.contact-info-card h4 {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f4c542;
+}
+
+.contact-info-card p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.contact-info-card a {
+    color: #f4c542;
+    text-decoration: none;
+}
+
+.contact-info-card a:hover {
+    text-decoration: underline;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+}
+/* PROFESSIONAL LARGE CARD DESIGN */
+.teacher-card,
+.principal-card {
+    width: 340px;
+    min-height: 420px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* IMAGE BECOMES BIG AND PROMINENT */
+.teacher-card img,
+.principal-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* NAME AND TEXT LOOK CLEAR */
+.teacher-card h4,
+.principal-card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.teacher-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* BUTTON AT THE BOTTOM */
+.view-cv {
+    margin-top: auto;
+    padding: 10px 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #d4af37, #f4c542);
+    color: #071533;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-cv:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(212, 175, 55, 0.4);
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 768px) {
+    .teacher-card,
+    .principal-card {
+        width: 90%;
+        min-height: 180px;
+    }
+
+    .teacher-card img {
+        height: 180px;
+    }
+}
+/* PRINCIPAL & TEACHER IMAGE SAME SIZE, NO BORDER */
+.principal-photo,
+.teacher-card img {
+    width: 90%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 15px;
+}
+
+/* RESPONSIVE SAFETY */
+@media (max-width: 768px) {
+    .principal-photo,
+    .teacher-card img {
+        height: 1800px;
+    }
+}
+/* CV BUTTON SMALL & PROFESSIONAL */
+.view-cv {
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #d4af37, #f4c542);
+    color: #071533;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.view-cv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(212, 175, 55, 0.3);
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+.footer-content {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #071533, #0d2c6b);
+    color: white;
+}
+
+.footer-contact {
+    margin-top: 15px;
+}
+
+.footer-contact h3 {
+    color: #f4c542;
+    margin-bottom: 8px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-contact a {
+    color: #f4c542;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+footer {
+    background: linear-gradient(135deg, #071533, #0d2c6b);
+    color: white;
+    padding: 50px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-brand h2 {
+    font-size: 26px;
+    color: #f4c542;
+}
+
+.footer-brand p {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.footer-column h3 {
+    color: #f4c542;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.footer-column p,
+.footer-column a {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+    color: #f4c542;
+}
+
+.footer-social {
+    margin-top: 25px;
+}
+
+.footer-social a {
+    font-size: 20px;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #f4c542;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+.excellence-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33%;
+
+    /* drop it down to align with Apply Now button level */
+    top: 500px;
+
+    background: linear-gradient(145deg, #0d2c6b, #071533);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+    text-align: center;
+    z-index: 10;
+}
+#about {
+    margin-top: 280px;
+}
+.excellence-card {
+    position: absolute;
+    left: 21%;
+    transform: translateX(-50%);
+    width: 33%;
+
+    /* normal content padding */
+    padding: 22px;
+
+    /* extend downward space */
+    padding-bottom: 470px;
+
+    background: linear-gradient(145deg, #0d2c6b, #071533);
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+    text-align: center;
+    z-index: 10;
+}
+.excellence-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.excellence-card:hover {
+    transform: translateX(-50%) translateY(-6px);
+    box-shadow: 0 26px 55px rgba(0,0,0,0.45);
+}
+.section .teacher-card {
+    width: 300px !important;
+    min-height: 210px !important;
+    height: auto !important;
+    padding: 16px !important;
+    display: block !important;
+}
+/* Full Screen Welcome Overlay (Instant Appearance) */
+#welcome-screen {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #0a1f44, #112e6b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    z-index: 999999;
+    opacity: 1;              /* Instant appearance */
+}
+
+/* No fade-in or gradual entry */
+
+/* Text styling */
+.welcome-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Fade Out Animation (gradual disappearance) */
+.fade-out {
+    animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.excellence-card {
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+/* Admission Card - Blue and Slightly Right */
+.admission-card {
+    background: #0a1f44; /* Blue like your other cards */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 480px;
+    width: 100%;
+   margin-top: 400px;
+align-self: center; /* Slightly right side */
+    text-align: center;
+}
+
+.admission-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.admission-card p {
+    font-size: 1rem;
+    margin: 4px 0;
+    opacity: 0.9;
+}
+
+.admission-card .btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: white;
+    color: #0a1f44;
+}
+/* HERO LAYOUT (Mobile Friendly) */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Hero text centered */
+.hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Excellence card (keeps your styling) */
+.excellence-card {
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+/* Admission card (blue, compact, mobile friendly) */
+.admission-card {
+    background: #0a1f4400;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 460px;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Button inside admission card */
+.admission-card .btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: white;
+    color: #0a1f44;
+}
+
+/* MOBILE FRIENDLY HEADER */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+.excellence-card {
+    max-width: 250px;
+    padding: 24px 20px;
+    text-align: center;
+    border-radius: 12px;
+
+    /* Overlap effect */
+    margin: 50px auto -80px; /* pulls card downward into gap */
+}
+#about {
+    margin-top: 10px; /* small gap instead of huge space */
+}
+@media (max-width: 768px) {
+    .admission-card {
+        position: static;   /* stop floating nonsense */
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .excellence-card {
+        position: static;
+        margin: 20px auto;
+        width: 90%;
+    }
+}
+/* HEADER (DESKTOP) */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 80px;
+    background:linear-gradient(135deg,#071533,#0d2c6b);
+    color:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* MOBILE FRIENDLY HEADER */
+@media (max-width: 768px) {
+    header {
+        flex-direction:column;
+        text-align:center;
+        padding:15px 20px;
+    }
+
+    .logo-area {
+        justify-content:center;
+        margin-bottom:10px;
+    }
+
+    nav {
+        display:none;
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#071533;
+        padding:20px;
+        width:200px;
+        border-radius:0 0 8px 8px;
+    }
+
+    nav ul {
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav.active {
+        display:block;
+    }
+
+    .menu-toggle {
+        display:block;
+    }
+
+    body {
+        padding-top:120px; /* prevents header covering content */
+    }
+}
+@media (max-width: 768px) {
+    .excellence-card {
+        position: static;          /* stop absolute/floating behavior */
+        width: 90%;                 /* fit mobile screen */
+        margin: 20px auto;           /* center it nicely */
+        padding: 20px;               /* normal padding */
+        box-sizing: border-box;      /* no overflow surprises */
+    }
+}
+@media (max-width: 768px) {
+    .form-wrapper {
+        width: 95%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .form-row label {
+        min-width: auto;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        width: 100%;
+    }
+}
+/* MOBILE FIX – Excellence Card Full Width */
+@media (max-width: 768px) {
+    .excellence-card {
+        position: static !important;      /* stop absolute positioning */
+        left: auto !important;
+        transform: none !important;
+
+        width: 92% !important;            /* fit within screen */
+        max-width: 100% !important;
+
+        margin: 20px auto !important;     /* center properly */
+        padding: 20px !important;
+
+        box-sizing: border-box !important;
+        overflow: hidden;                 /* prevent side cut */
+    }
+}
+.logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    object-position: 50% 20%;  /* adjust if needed */
+}
+#about {
+    position: relative;
+    background-image: url('aboutback.png'); /* change path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Dark overlay so text is readable */
+#about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Keep content above overlay */
+#about > * {
+    position: relative;
+}
+
+/* Optional heading styling */
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Optional paragraph styling */
+#about p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #f1f1f1;
+}
+#principles {
+    position: relative;
+#principles {
+    background-image: url('principalback.png') !important;
+}
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+#principles::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#principles > * {
+    position: relative;
+}
+
+#principles h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#principles p {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #f1f1f1;
+}
+#principles {
+    min-height: 400px;
+}
+/* ============================= */
+/*         RESULT SECTION        */
+/* ============================= */
+
+:root {
+    --nav-blue: #071533;
+    --nav-blue-dark: #050f26;
+}
+
+/* Section */
+.result-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Title */
+.result-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #071533;
+    letter-spacing: 1px;
+}
+
+.result-table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 50px auto; /* Increased spacing */
+    overflow-x: auto;
+}
+.result-table {
+    width: 85%;
+    max-width: 950px;
+    margin: 0 auto; /* This forces center alignment */
+    border-collapse: collapse;
+    font-size: 15px;
+    background: var(--nav-blue);
+    color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Header */
+.result-table thead {
+    background: var(--nav-blue-dark);
+}
+
+.result-table th {
+    padding: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+/* Body */
+.result-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Hover */
+.result-table tbody tr:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Percentage highlight */
+.percentage {
+    font-weight: 700;
+    color: #ffc107; /* Soft gold for contrast */
+}
+
+/* Description */
+.result-description {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .result-table {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+/* ============================= */
+/*          ROOT COLORS          */
+/* ============================= */
+
+:root {
+    --nav-blue: #071533;
+    --nav-blue-dark: #050f26;
+    --accent: #ffc107;
+}
+
+/* ============================= */
+/*         HERO SECTION          */
+/* ============================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 20px;
+    background: var(--nav-blue);
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ============================= */
+/*        FEE HERO CARD           */
+/* ============================= */
+
+.fee-card {
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fee-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0);
+}
+
+.fee-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.fee-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Fee Button */
+.fee-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.fee-btn:hover {
+    background: #ffb300;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/*      FEE STRUCTURE PAGE        */
+/* ============================= */
+
+.fee-page {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.fee-page-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff
+}
+
+.fee-page-description {
+    max-width: 1000px;
+    margin: 40px 40px ;
+    font-size: 25px;
+    line-height: 2;
+    color: #ffffff;
+}
+
+/* Table Container */
+.fee-table-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+/* Table */
+.fee-table {
+    width: 85%;
+    max-width: 950px;
+    border-collapse: collapse;
+    background: var(--nav-blue);
+    color: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Header */
+.fee-table thead {
+    background: var(--nav-blue-dark);
+}
+
+.fee-table th {
+    padding: 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+}
+
+/* Body */
+.fee-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Hover */
+.fee-table tbody tr:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .fee-card {
+        margin-top: 20px;
+    }
+
+    .fee-table {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+@media (min-width: 769px) {
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .fee-card {
+        order: 1; /* Left side */
+    }
+
+    .hero-content {
+        order: 2; /* Right side */
+    }
+}
+/* REMOVE CARD LAYOUT FROM ABOUT SECTION ONLY */
+#about .cards {
+    display: block !important;
+}
+
+#about .card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 30px;
+    width: 100% !important;
+}
+#about h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #f4c542;
+}
+
+#about p {
+    max-width: 850px;
+    margin: 0 auto 25px auto;
+}
+/* ABOUT SECTION HEADINGS COLOR FIX */
+#about h2,
+#about h3 {
+    color: #f4c542 !important;
+}
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#about h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+/* ===================================== */
+/* DESKTOP ONLY – Clean Faculty Layout  */
+/* ===================================== */
+
+@media (min-width: 769px) {
+
+    .teacher-card,
+    .principal-card {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teacher-card img,
+    .principal-photo {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+
+    .teacher-card h4,
+    .principal-card h3 {
+        margin-bottom: 8px;
+    }
+
+    .teacher-card p {
+        margin-bottom: 12px;
+    }
+
+    .view-cv {
+        margin-top: 10px;
+    }
+}
+.fee-page-description {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fee-page-description p {
+    font-size: 20px;          /* big like h3 */
+    margin: 10px 0;           /* space between lines */
+    line-height: 1.6;
+}
+/* ===================================== */
+/* DESKTOP ONLY – PRINCIPAL REMARKS CONTROL */
+/* ===================================== */
+
+@media (min-width: 769px) {
+
+    .principal-remarks {
+        flex: 1;                 /* fills remaining width */
+        min-height: 520px;         /* adjust for height */
+        padding: 50px;             /* space inside */
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    /* OPTIONAL: if you want to change height later */
+    /* just edit min-height and padding values */
+}
+/* ===================================== */
+/* DESKTOP ONLY – PRINCIPAL PHOTO LEFT FIX */
+/* ===================================== */
+
+@media (min-width: 769px) {
+
+    .principal-block {
+        display: flex;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    /* Principal photo card (left side) */
+    .principal-card {
+        width: 600px;            /* keep width same */
+        min-height: 300x;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Image inside card */
+    .principal-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        flex-grow: 1;
+    }
+
+    /* Remarks card height matches photo card */
+    .principal-remarks {
+        min-height: 300px;
+    }
+}
+/* ===================================== */
+/* ROUND SHAPE FIX – PRINCIPAL CARD & CV */
+/* ===================================== */
+
+/* Principal profile card rounded */
+.principal-card {
+    border-radius: 20px;
+    overflow: hidden; /* keeps image inside rounded shape */
+}
+
+/* Image inside card (optional smooth edges) */
+.principal-photo {
+    border-radius: 12px;
+}
+
+/* CV button card / button rounded */
+.view-cv {
+    border-radius: 30px;
+    padding: 10px 18px;
+}
+/* ===================================== */
+/* MOBILE FRIENDLY – FACULTY SECTION FIX */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+    /* Faculty cards full width */
+    .teacher-card,
+    .principal-card {
+        width: 92% !important;
+        min-height: auto !important;
+        margin: 20px auto !important;
+        padding: 18px !important;
+        box-sizing: border-box;
+    }
+
+    /* Images scale properly */
+    .teacher-card img,
+    .principal-photo {
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: contain !important;
+        border-radius: 12px;
+    }
+
+    /* Text spacing */
+    .teacher-card h4,
+    .principal-card h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .teacher-card p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    /* CV button center and proper size */
+    .view-cv {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    /* Gallery grid becomes single column */
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px; 
+    }
+
+    .gallery img {
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+/* HERO */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(5,15,45,0.8),rgba(5,15,45,0.85)),
+    url('background.jpeg') center/cover;
+}
